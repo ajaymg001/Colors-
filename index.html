@@ -3,93 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Agency</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="home.js"></script>
-
+    <title>Good Night Bandriii 😘</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5rem;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #fff; }
+            100% { text-shadow: 0 0 20px #ff6b81; }
+        }
+        .heart {
+            font-size: 2rem;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .button {
+            background: #ff6b81;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+        .button:hover {
+            background: #ff4757;
+        }
+        /* Falling Hearts Animation */
+        .falling-heart {
+            position: absolute;
+            top: -50px;
+            color: red;
+            font-size: 2rem;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-50px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Travel Agency Logo">
-            <h1>Explore the World</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#packages">Packages</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <h1>Good Night Bandriii 😘</h1>
+        <p class="heart">❤️❤️❤️</p>
+        <button class="button" onclick="alert('Sweet Dreams Bandriii 😍')">Click for Surprise</button>
+    </div>
     
-    <section class="hero" id="home">
-        <h2>Your Adventure Awaits</h2>
-        <p>Discover the most beautiful places with our best travel packages.</p>
-        <button>Book Now</button>
-    </section>
-    
-    <section class="destinations-grid" id="destinations">
-        <div class="package">
-            <img src="paris.jpg" alt="Paris">
-            <h3>Paris</h3>
-            <p>Starting from $999</p>
-            <button>View Details</button>
-        </div>
-        <div class="package">
-            <img src="bali.jpg" alt="Bali">
-            <h3>Bali</h3>
-            <p>Starting from $799</p>
-            <button>View Details</button>
-        </div>
-    </section>
-    
-    <section class="blog-section" id="blog">
-        <h2>Travel Blog</h2>
-        <div class="blog-post">
-            <h3>Top 10 Travel Destinations</h3>
-            <p>Explore the best travel destinations of the year...</p>
-        </div>
-        <div class="blog-post">
-            <h3>Tips for Safe Travel</h3>
-            <p>How to make your travel journey safe and enjoyable...</p>
-        </div>
-    </section>
-    
-    <section class="testimonials">
-        <h2>Customer Reviews</h2>
-        <div class="testimonial">
-            <p>"Had an amazing trip with this agency! Highly recommended." - Alex</p>
-        </div>
-        <div class="testimonial">
-            <p>"Best travel experience ever, great service!" - Sarah</p>
-        </div>
-    </section>
-    
-    <section id="booking">
-        <h2>Book Your Trip</h2>
-        <form id="bookingForm">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="destination">Destination</label>
-            <input type="text" id="destination" name="destination" required>
-            
-            <label for="message">Additional Requests</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Travel Agency. All Rights Reserved.</p>
-        <a href="https://wa.me/your-number" class="whatsapp-button">WhatsApp</a>
-    </footer>
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("falling-heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Random speed
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 500);
+    </script>
 </body>
 </html>
